@@ -1,21 +1,25 @@
-"use client";
-import Link from "next/link";
-import React, { useEffect, useState } from "react";
 
-export default function Home() {
-    return (
-        <div className="flex min-h-screen flex-col items-center justify-between">
-            <div className="flex flex-col min-h-screen justify-center items-center">
-                <p className="text-white font-semibold text-8xl">rival</p>
-                <div className="flex flex-row gap-5 mt-20 sm:gap-14">
-                    <Link
-                        href="/commands"
-                        className="text-rival-pink font-bold text-xl"
-                    >
-                        commands
-                    </Link>
-                </div>
-            </div>
-        </div>
-    );
+"use client";
+import { HomeSplash } from "@/components/home/splash/HomeSpash";
+import { HomeFeatures } from "@/components/home/feature/HomeFeatures";
+import { HomeFaq } from "@/components/home/faq/HomeFaq";
+import { motion } from "framer-motion";
+import "@/styles/globals.css";
+
+export default function Page() {
+  // made by cop
+  return (
+    <>
+      {/* made by cop */}
+      <motion.div initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
+        <HomeSplash title="Template" description="a gay nigga" link="https://discord.gg/yes" />
+      </motion.div>
+      <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }}>
+        <HomeFeatures />
+      </motion.div>
+      <motion.div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.4 }}>
+        <HomeFaq />
+      </motion.div>
+    </>
+  );
 }

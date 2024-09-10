@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  scroll-behavior: smooth;
+  color: transparent;
+  background-color: transparent;
+  background: linear-gradient(90deg, #0a0d14 0%, #09080e 100%);
+}
+
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .canvas {
+    z-index: -1;
+  }
+}
